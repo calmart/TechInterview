@@ -1,0 +1,7 @@
+{
+  "name": "testtech",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

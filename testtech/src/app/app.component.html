@@ -1,0 +1,75 @@
+
+    <table mat-table [dataSource]="dataSource">
+      <ng-container [matColumnDef]="col.key" *ngFor="let col of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef>
+          
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div [ngSwitch]="col.type" *ngIf="!element.isedit">
+            <div class="btn-edit" *ngSwitchCase="'isedit'">
+              
+              
+            </div>
+            <span *ngSwitchDefault>
+              {{Item Name}} 
+              &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+              {{Item Number}} 
+              &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+              {{Experation Date}}
+            </span>
+          </div>
+          <div *ngIf="element.isedit">
+            <div class="btn-edit" *ngIf="col.key === 'isedit'; else dataField">
+              
+            </div>
+            <ng-template #dataField>
+              <mat-form-field>
+                <input
+                [type]="col.type"
+                matInput
+                [(ngModel)]="element[col.key]"
+                />
+                <input
+                [type]="col.type"
+                matInput
+                [(ngModel)]="element[col.key]"
+                />
+                <input
+                [type]="col.type"
+                matInput
+                [(ngModel)]="element[col.key]"
+                />
+                <button mat-button (click)="element.isedit = !element.isedit">Edit</button>
+                <button mat-button (click)="removeRow(element.id)"> Delete </button>
+                <button mat-button(click)="element.isedit = !element.isedit">Done</button>
+              </mat-form-field>
+            </ng-template>
+          </div>
+          <input
+          [type]="col.type"
+          matInput
+          [(ngModel)]="element[col.key]"
+          />
+          <input
+          [type]="col.type"
+          matInput
+          [(ngModel)]="element[col.key]"
+          />
+          <input
+          [type]="col.type"
+          matInput
+          [(ngModel)]="element[col.key]"
+          />
+          <button mat-button (click)="element.isedit = !element.isedit">Edit</button>
+                <button mat-button (click)="removeRow(element.id)"> Delete </button>
+                <button mat-button(click)="element.isedit = !element.isedit">Done</button>
+
+        </td>
+      </ng-container>
+      <article class="table-header"> 
+        <button class="button-input" mat-button (click)="additem()">Add Item</button>
+    </article>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+

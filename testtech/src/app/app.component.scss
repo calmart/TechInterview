@@ -1,0 +1,30 @@
+p
+
+{ 
+    font-family : Lato ;
+} 
+
+table{ 
+    width : 80%;
+    margin:auto; 
+    margin-top: 25px;
+}
+.btn-delete{
+    text-align: right;
+}
+h2 {
+    text-align: center;
+    padding-top: 20px;
+}
+.table-header {
+    width: 80%;
+    margin: auto;
+    text-align: right;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-input{
+    padding-right: 5px;
+}
